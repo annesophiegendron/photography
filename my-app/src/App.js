@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import gsap from 'gsap'
+
+// Styles
+import './styles/App.scss'
+
+// Components
+import Header from './components/header'
+import Banner from './components/banner'
+import Cases from './components/cases'
+import IntroOverlay from './components/introOverlay'
 
 function App() {
+
+  useEffect(() => {
+    
+    let vh = window.innerHeight * .01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+    // timeline
+    const tl = gsap.timeline()
+
+    // specific to this project, otherwise would use useRef
+    // to avoid flashing animation when refreshing
+
+    tl.from(".line span", 1.8, {
+      y: 100,
+      ease: "power4.out",
+      delay: 1,
+      skewY: 7,
+      stagger: {
+        amount: 0.3 // to delay
+      }
+})
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IntroOverlay />
+      <Header />
+      <Banner />
+      <Cases />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
