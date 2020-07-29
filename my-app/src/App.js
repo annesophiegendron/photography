@@ -25,7 +25,7 @@ function App() {
     // specific to this project, otherwise would use useRef
     // to avoid flashing animation when refreshing
 
-    tl.from(".line span", 1.8, {
+    tl.from(".line span", 1.5, {
       y: 100,
       ease: "power4.out",
       delay: 1,
@@ -33,14 +33,25 @@ function App() {
       stagger: {
         amount: 0.3 // to delay
       }
-    }).to(".overlay-top", 1.6, {
+    })
+      .to(".overlay-top", 1.6, {
       height: 0,
       ease: "expo.inOut",
       stagger: 0.4,
-    }).to(".overlay-bottom", 1.6, {
+    })
+      .to(".overlay-bottom", 1.6, {
       width: 0,
       ease: "expo.inOut", 
       delay: -.8,
+      stagger: {
+        amount: 0.4,
+      }
+      })
+      .to(".intro-overlay", 0, { css: { display: "none" } })
+      .from(".case-image img", 1.6, {
+      scale: 1.4,
+      ease: "expo.inOut", 
+      delay: -2,
       stagger: {
         amount: 0.4,
       }
