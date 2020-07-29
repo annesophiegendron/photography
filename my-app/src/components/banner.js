@@ -8,10 +8,7 @@ const Banner = () => {
         <div className="row">
           <h2>
             <div className="line">
-              <span>Creating unique photographs</span>
-            </div>
-            <div className="line">
-              <span>with a unique camera.</span>
+              <span>photography captures</span>
             </div>
           </h2>
           <div className="btn-row">
