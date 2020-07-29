@@ -7,6 +7,7 @@
 
 body,
 html {
+  visibility: hidden; // hidden until all the DOM elements are loaded
   user-select: none;
   background: $white;
   overscroll-behavior: none;

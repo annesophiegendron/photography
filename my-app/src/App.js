@@ -17,6 +17,8 @@ function App() {
     let vh = window.innerHeight * .01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
 
+    gsap.to("body", 0, { css: { visibility: "visible" } }) // to prevent the flashing to happen over the h2 text animation
+    
     // timeline
     const tl = gsap.timeline()
 
