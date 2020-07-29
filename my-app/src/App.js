@@ -33,6 +33,17 @@ function App() {
       stagger: {
         amount: 0.3 // to delay
       }
+    }).to(".overlay-top", 1.6, {
+      height: 0,
+      ease: "expo.inOut",
+      stagger: 0.4,
+    }).to(".overlay-bottom", 1.6, {
+      width: 0,
+      ease: "expo.inOut", 
+      delay: -.8,
+      stagger: {
+        amount: 0.4,
+      }
 })
   }, [])
   
