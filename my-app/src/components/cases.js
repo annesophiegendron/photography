@@ -6,19 +6,19 @@ const caseStudies = [
   {
     id: 1,
     subtitle: 'Oskar',
-    title: 'him', 
+    title: '001', 
     img: 'dad-and-son-beach'
   },
   {
     id: 2,
     subtitle: 'Them',
-    title: 'together', 
+    title: '002', 
     img: 'wood'
   },
   {
     id: 3,
-    subtitle: 'Black and White',
-    title: 'melancoly', 
+    subtitle: 'Territories',
+    title: '003', 
     img: 'beach'
   }
 ]

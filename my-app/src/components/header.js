@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <a href="/">PHOTOGRAPHY.</a>
+            <a href="/">ANNE-SOPHIE GENDRON.</a>
           </div>
           <div className="nav">
             <span></span>
