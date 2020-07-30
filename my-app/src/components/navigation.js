@@ -25,8 +25,7 @@ const Navigation = () => {
             <div className="nav-label">Contact</div>
             <div className="nav-infos">
               <ul className="nav-info">
-                <li className="nav-info-label">Email: annesophie.gendron@gmail.com</li>
-                <li className="nav-info-label">LinkedIn</li>
+                <li className="nav-info-label">annesophie.gendron@gmail.com</li>
               </ul>
             </div>
           </div>
