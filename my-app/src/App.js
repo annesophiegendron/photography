@@ -1,70 +1,88 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import gsap from 'gsap'
+import { Route } from 'react-router-dom'
 
 // Styles
 import './styles/App.scss'
 
 // Components
 import Header from './components/header'
-import Banner from './components/banner'
-import Cases from './components/cases'
-import IntroOverlay from './components/introOverlay'
+import Navigation from './components/navigation'
+
+// Pages
+import Home from './pages/home'
+import Series from './pages/series'
+import About from './pages/about'
+
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/series", name: "Series", Component: Series },
+  { path: "/about", name: "About us", Component: About },
+]
+
+// to prevent the state to update every the use resize the viewport > otherwise could slow down the app creating a thousand objects
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  }
+}
 
 function App() {
-
+  // to prevent the flashing to happen over the h2 text animation
+  gsap.to("body", 0, { css: { visibility: "visible" } })
+  
+  // to capture the height and width and send it to the state
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+      
   useEffect(() => {
-    
-    let vh = window.innerHeight * .01
+    // grab inner height of window for mobile reasons when dealing with vh
+    // let vh = window.innerHeight * 0.01
+    let vh = dimensions.height * 0.01 
+
+    //Set css variable vh
     document.documentElement.style.setProperty('--vh', `${vh}px`)
 
-    gsap.to("body", 0, { css: { visibility: "visible" } }) // to prevent the flashing to happen over the h2 text animation
-    
-    // timeline
-    const tl = gsap.timeline()
-
-    // specific to this project, otherwise would use useRef
-    // to avoid flashing animation when refreshing
-
-    tl.from(".line span", 1.5, {
-      y: 100,
-      ease: "power4.out",
-      delay: 1,
-      skewY: 7,
-      stagger: {
-        amount: 0.3 // to delay
-      }
-    })
-      .to(".overlay-top", 1.6, {
-      height: 0,
-      ease: "expo.inOut",
-      stagger: 0.4,
-    })
-      .to(".overlay-bottom", 1.6, {
-      width: 0,
-      ease: "expo.inOut", 
-      delay: -.8,
-      stagger: {
-        amount: 0.4,
-      }
+    const HandleResize = () => {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
       })
-      .to(".intro-overlay", 0, { css: { display: "none" } })
-      .from(".case-image img", 1.6, {
-      scale: 1.4,
-      ease: "expo.inOut", 
-      delay: -2,
-      stagger: {
-        amount: 0.4,
-      }
-})
-  }, [])
-  
+    }
+
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }, 1000) // 1000 == represents the "ms" in the setTimeout 
+
+    window.addEventListener("resize", debouncedHandleResize)
+
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize)
+    }
+  })
+
   return (
-    <div className="App">
-      <IntroOverlay />
-      <Header />
-      <Banner />
-      <Cases />
-    </div>
+    <>
+      <Header dimensions={dimensions} />
+      <div className="App">
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            <Component />
+            </Route>
+        ))}
+      </div>
+      <Navigation />
+    </>
   )
 }
 
