@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Services = () => {
+const SerieOne = () => {
   return (
     <div className="page">
       <div className="container"> 
         <div className="row">
-          <h3>This is the services page</h3>
+          <h3>This is the Serie 001 page</h3>
         </div>
       </div>
     </div>
   )
 }
 
-export default Services
+export default SerieOne
