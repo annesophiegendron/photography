@@ -40,6 +40,9 @@
       position: relative;
       background: $black;
       cursor: pointer;
+      a:-webkit-any-link {
+        text-decoration: none;
+    }
       &:hover {
         .case-image {
           opacity: 0.4 !important;

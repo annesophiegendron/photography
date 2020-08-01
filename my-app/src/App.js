@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import gsap from 'gsap'
 import { Route } from 'react-router-dom'
+
+// Libraries
+import gsap from 'gsap'
 
 // Styles
 import './styles/App.scss'
@@ -13,11 +15,21 @@ import Navigation from './components/navigation'
 import Home from './pages/home'
 import Series from './pages/series'
 import About from './pages/about'
+import All from './pages/all'
+import SerieOne from './pages/series/serieOne'
+import SerieTwo from './pages/series/serieTwo'
+import SerieThree from './pages/series/serieThree'
+
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/series", name: "Series", Component: Series },
   { path: "/about", name: "About us", Component: About },
+  { path: "/all", name: "See all", Component: All },
+  { path: "/serie001", name: "Serie 001", Component: SerieOne },
+  { path: "/serie002", name: "Serie 002", Component: SerieTwo },
+  { path: "/serie003", name: "Serie 003", Component: SerieThree }
+
 ]
 
 // to prevent the state to update every the use resize the viewport > otherwise could slow down the app creating a thousand objects
@@ -76,7 +88,10 @@ function App() {
       <Header dimensions={dimensions} />
       <div className="App">
         {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
+          <Route
+            key={path}
+            exact
+            path={path}>
             <Component />
             </Route>
         ))}
