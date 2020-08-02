@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 
 // Libraries
 import gsap from 'gsap'
+import { AnimatePresence } from "framer-motion"
 
 // Styles
 import './styles/App.scss'

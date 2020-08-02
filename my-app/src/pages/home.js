@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import gsap from 'gsap'
 
 import Banner from '../components/banner'
-import Cases from '../components/cases'
+import Series from '../components/series'
 import IntroOverlay from '../components/introOverlay'
 
 const homeAnimation = (completeAnimation) => {
@@ -35,7 +35,7 @@ const homeAnimation = (completeAnimation) => {
     }
     })
     .to(".intro-overlay", 0, { css: { display: "none" } })
-    .from(".case-image img", 1.6, {
+    .from(".serie-image img", 1.6, {
     scale: 1.4,
     ease: "expo.inOut", 
     delay: -2,
@@ -63,7 +63,7 @@ const Home = () => {
       {animationComplete === false ? <IntroOverlay /> : ""}
       
       <Banner />
-      <Cases /> 
+      <Series /> 
     </>
   )
 }
