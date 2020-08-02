@@ -90,10 +90,16 @@ function App() {
       <div className="App">
         {routes.map(({ path, Component }) => (
           <Route
+            render={({ location }) => (
+              <AnimatePresence initial={false} exitBeforeEnter>
+                <Component
+                  location={location} key={location.pathname}
+                />
+              </AnimatePresence>
+            )} 
             key={path}
             exact
             path={path}>
-            <Component />
             </Route>
         ))}
       </div>
