@@ -1,7 +1,7 @@
-.cases {
+.series {
   height: 50vh;
   height: calc(var(--vh, 1vh) * 50);
-  .cases-navigation {
+  .series-navigation {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -14,7 +14,7 @@
     @include media("<=tablet") {
       display: none;
     }
-    .cases-arrow {
+    .series-arrow {
       background: rgba(0, 0, 0, 0.4);
       height: 72px;
       width: 72px;
@@ -36,7 +36,7 @@
     @include media("<=tablet") {
       flex-direction: column;
     }
-    .case {
+    .serie {
       position: relative;
       background: $black;
       cursor: pointer;
@@ -44,11 +44,11 @@
         text-decoration: none;
     }
       &:hover {
-        .case-image {
+        .serie-image {
           opacity: 0.4 !important;
         }
       }
-      .case-details {
+      .serie-details {
         width: 33.3333vw;
         height: 50vh;
         height: calc(var(--vh, 1vh) * 50);
@@ -96,7 +96,7 @@
           }
         }
       }
-      .case-image {
+      .serie-image {
         top: 0;
         left: 0;
         width: 100%;
