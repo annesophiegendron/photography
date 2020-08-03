@@ -5,7 +5,7 @@
 @import "./components/banner.scss";
 @import "./components/series.scss";
 @import "./components/navigation.scss";
-
+@import "./components/serie-page.scss";
 
 body,
 html {
@@ -149,6 +149,6 @@ html {
   background: $white;
   .row {
     display: flex;
-    align-items: center;
+    justify-content: center;
   }
 }

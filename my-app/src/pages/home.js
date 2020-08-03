@@ -61,7 +61,6 @@ const Home = () => {
   return (
     <>
       {animationComplete === false ? <IntroOverlay /> : ""}
-      
       <Banner />
       <Series /> 
     </>
