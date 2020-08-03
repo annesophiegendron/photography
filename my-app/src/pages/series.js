@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Series = () => {
+const SeriesPage = () => {
   return (
     <div className="page">
       <div className="container"> 
@@ -12,4 +12,4 @@ const Series = () => {
   )
 }
 
-export default Series
+export default SeriesPage
