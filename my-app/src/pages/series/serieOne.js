@@ -37,7 +37,7 @@ return (
   <>
     <AnimatePresence initial={false} custom={direction}>
       <motion.div className="slider-container">
-      <img
+      <motion.img
         className="image-slider"
         key={page}
         src={images[imageIndex]}
@@ -48,7 +48,7 @@ return (
         exit="exit"
         transition={{
           x: { type: "spring", stiffness: 300, damping: 200 },
-          opacity: { duration: 0.4 }
+          opacity: { duration: 0.7 }
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -64,7 +64,6 @@ return (
         }}
         />
       </motion.div>
-      
     </AnimatePresence>
     <div className="next" onClick={() => paginate(1)}>
       {"‣"}
