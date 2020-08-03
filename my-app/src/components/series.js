@@ -38,14 +38,14 @@ const Series = () => {
     <section className="series"> 
       
       <div className="container-fluid"> 
-        <div className="series-navigation">
+        {/* <div className="series-navigation">
           <div className="series-arrow prev disabled">
             <SeriesPrev />
           </div>
           <div className="series-arrow next">
             <SeriesNext />
           </div>
-        </div>
+        </div> */}
 
         <div className="row">
           {photoSeries.map((serieItem) => (
