@@ -4,13 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 import { images } from "../../assets/serieOne/image-data"
 
-
 const variants = {
   enter: (direction: number) => {
     return {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0
-    };
+    }
   },
   center: {
     zIndex: 1,
@@ -27,12 +26,12 @@ const variants = {
 }
 
 export const SerieOne = () => {
-  const [[page, direction], setPage] = useState([0, 0]);
-  const imageIndex = wrap(0, images.length, page);
+  const [[page, direction], setPage] = useState([0, 0])
+  const imageIndex = wrap(0, images.length, page)
 
   const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
+    setPage([page + newDirection, newDirection])
+  }
 
 return (
   <>
