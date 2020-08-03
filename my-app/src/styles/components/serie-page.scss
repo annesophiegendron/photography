@@ -3,7 +3,7 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
-  background: #151515;
+  background: $white;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -41,8 +41,21 @@
 
 .image-slider {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
+  width: 1080px;
+  min-width: 1080px;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 50vw;
+  }
 }
 
 .refresh {

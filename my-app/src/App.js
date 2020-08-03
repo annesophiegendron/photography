@@ -14,7 +14,6 @@ import Navigation from './components/navigation'
 
 // Pages
 import Home from './pages/home'
-import SeriesPage from './pages/series'
 import About from './pages/about'
 import All from './pages/all'
 import SerieOne from './pages/series/serieOne'
@@ -23,13 +22,11 @@ import SerieThree from './pages/series/serieThree'
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { path: "/series", name: "Series", Component: SeriesPage },
   { path: "/about", name: "About us", Component: About },
   { path: "/all", name: "See all", Component: All },
   { path: "/serie001", name: "Serie 001", Component: SerieOne },
   { path: "/serie002", name: "Serie 002", Component: SerieTwo },
   { path: "/serie003", name: "Serie 003", Component: SerieThree }
-
 ]
 
 // to prevent the state to update every the use resize the viewport > otherwise could slow down the app creating a thousand objects

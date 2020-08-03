@@ -51,7 +51,7 @@ nav {
         }
       }
       .nav-label {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         font-size: 0.7rem;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -63,6 +63,7 @@ nav {
         @include media("<=phone") {
           font-size: 0.875rem;
           margin-bottom: 1.2rem;
+          margin-top: 1rem;
         }
       }
       .nav-infos {
@@ -111,18 +112,18 @@ nav {
         margin: 0;
         li {
           list-style: none;
-          margin-bottom: 2.4rem;
+          margin-bottom: 1rem;
           @include media("<=phone") {
-            margin-bottom: 1.6rem;
+            margin-bottom: 0.2rem;
           }
           a {
             font-weight: 600;
             color: $black;
-            font-size: 2.8rem;
+            font-size: 2rem;
             text-decoration: none;
             color: $black;
             @include media("<=phone") {
-              font-size: 2rem;
+              font-size: 1.2rem;
             }
           }
         }

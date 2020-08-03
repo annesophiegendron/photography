@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
-import { images } from "../../assets/serieOne/image-data"
+import { images } from "../../assets/serieOne/image-data-serieOne"
 
 const variants = {
   enter: (direction: number) => {
@@ -84,19 +84,6 @@ return (
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
 return Math.abs(offset) * velocity;
-};
-
-// const SerieOne = () => {
-//   return (
-//     <div className="page">
-//       <div className="container"> 
-//         <div className="row">
-//           <img className="serie-img" src={require("../../assets/dad-and-son-beach.jpeg")} alt="dad and son on the beach"></img>
-//           <img className="serie-img" src={require("../../assets/dad-and-son-beach.jpeg")} alt="dad and son on the beach"></img>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
+}
 
 export default SerieOne
