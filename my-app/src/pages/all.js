@@ -10,7 +10,7 @@ import { useInView } from 'react-intersection-observer'
 
 const All = () => {
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [100, 300], [0, 200])
+  const y1 = useTransform(scrollY, [100, 300], [0, 100])
   const y2 = useTransform(scrollY, [0, 300], [0, -100])
 
   const [ref, inView, entry] = useInView({
@@ -34,12 +34,12 @@ const All = () => {
       <div className="parallax-container">
 
         <motion.img
-          className="parallax-img" style={{ y: y1, x: 50 }}
+          className="parallax-img" style={{ y: y1, x: -100 }}
           src={require(`../assets/oskar_couch.jpeg`)} alt=""
         />
         <motion.img
           className="parallax-img"
-          style={{ y: y2, x: 130, background: 'blue' }}
+          style={{ y: y2, x: 130}}
           src={require(`../assets/dad-and-son-beach.jpeg`)} alt=""
         />
 
