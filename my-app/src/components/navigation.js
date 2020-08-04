@@ -11,22 +11,22 @@ const Navigation = () => {
               <ul className="nav-links">
               <li>
                 <NavLink to="/serie001" exact>
-                  Serie 001
+                  serie 001
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/serie002" exact>
-                  Serie 002
+                  serie 002
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/serie003" exact>
-                  Serie 003
+                  serie 003
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/about" exact>
-                  About
+                  about
                 </NavLink>
               </li>
               </ul>
