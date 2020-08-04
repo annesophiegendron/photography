@@ -114,7 +114,7 @@ nav {
           list-style: none;
           margin-bottom: 1rem;
           @include media("<=phone") {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
           }
           a {
             font-weight: 600;
