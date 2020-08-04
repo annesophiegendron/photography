@@ -49,8 +49,10 @@
     min-width: 1280px;
   }
   @include media("<=desktop") {
-    width: 1080px;
-    min-width: 1080px;
+    height: 50vh;
+  width: 90vh;
+    // width: 1080px;
+    // min-width: 1080px;
   }
   @include media("<=1080px") {
     width: 50vw;
