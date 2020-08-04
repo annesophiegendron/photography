@@ -44,16 +44,16 @@
   height: 50vh;
   width: 90vh;
   // min-width: 1080px;
-  @include media("<=1560px") {
-    width: 1280px;
-    min-width: 1280px;
-  }
-  @include media("<=desktop") {
-    height: 50vh;
-  width: 90vh;
-    // width: 1080px;
-    // min-width: 1080px;
-  }
+  // @include media("<=1560px") {
+  //   width: 1280px;
+  //   min-width: 1280px;
+  // }
+  // @include media("<=desktop") {
+  //   height: 50vh;
+  // width: 90vh;
+  //   // width: 1080px;
+  //   // min-width: 1080px;
+  // }
   @include media("<=1080px") {
     width: 50vw;
   }
