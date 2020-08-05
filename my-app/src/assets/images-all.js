@@ -23,8 +23,8 @@ export const images = [
     background: "#8C8C8C",
     width: 500,
     height: 300,
-    left: "-30%",
-    top: "20%"
+    left: "-20%",
+    top: "30%"
   },
   {
     src:
