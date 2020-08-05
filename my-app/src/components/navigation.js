@@ -24,11 +24,6 @@ const Navigation = () => {
                   serie 003
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/about" exact>
-                  about
-                </NavLink>
-              </li>
               </ul>
           </div>
           <div className="nav-column">

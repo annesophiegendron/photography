@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
-import { images } from "../../assets/serieOne/image-data-serieTwo"
+import { images } from "../../assets/serie-page/image-data-serieTwo"
 
 const variants = {
   enter: (direction: number) => {
