@@ -116,11 +116,13 @@ const ParallaxImage = ({ src, ...style }) => {
 };
 
 const All = () => (
-  <div className="parallax-container">
-    {images.map(image => (
-      <ParallaxImage key={image.src} {...image} />
-    ))}
+  <div className="all-wrapper">
+    <div className="parallax-container">
+      {images.map(image => (
+        <ParallaxImage key={image.src} {...image} />
+      ))}
+    </div>
   </div>
-);
+)
 
 export default All
