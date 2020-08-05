@@ -62,13 +62,5 @@ export const images = [
     left: "50%",
     top: 100
   },
-  {
-    src:
-      "https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg",
-    background: "#D2D9D6",
-    width: 500,
-    height: 400,
-    left: -100,
-    top: "50%"
-  }
+
 ]
