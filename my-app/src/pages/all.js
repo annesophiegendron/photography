@@ -13,6 +13,7 @@
 //   const { scrollY } = useViewportScroll()
 //   const y1 = useTransform(scrollY, [100, 300], [0, 100])
 //   const y2 = useTransform(scrollY, [0, 300], [0, -100])
+//   const y3 = useTransform(scrollY, [0, -600], [0, 300])
 
 //   const [ref, inView, entry] = useInView({
 //     threshold: 0.5,
@@ -89,15 +90,7 @@ const ParallaxImage = ({ src, ...style }) => {
   return (
     <div ref={ref} className="image-container">
       <motion.div className="overlay" style={{ ...style, y }} />
-      <motion.img
-        className="parallax-img"
-        src={src}
-        alt=""
-        animate={inView ? 'visible' : 'hidden'}
-        variants={variants}
-        transition={{ duration: 2, ease: 'easeOut' }}
-        ref={ref}
-      />
+      <img className="parallax-img" src={src} alt="" />
     </div>
   );
 };
