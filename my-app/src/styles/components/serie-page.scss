@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 .next,
 .prev {
@@ -30,7 +30,7 @@
 
 .next {
   right: 10px;
-}
+} 
 
 .prev {
   left: 10px;
@@ -43,17 +43,22 @@
   width: 90vh;
 }
 
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+//series overlay transitions
+.serie-overlay-container {
+  .serie-overlay {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 8;
+    .serie-transition {
+      position: absolute;
+      height: 100%;
+      width: 100vw;
+      background: $black;
+      top: 0;
+      right: 0%;
+    }
+  }
 }

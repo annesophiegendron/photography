@@ -130,7 +130,6 @@ const All = () => {
   const completeAnimation = () => {
     setAnimationComplete(true)
   }
-
   useEffect(() => {    
    allAnimation(completeAnimation)
   }, [])
@@ -150,4 +149,4 @@ const All = () => {
   )
 }
 
-export default All
+export default All 
