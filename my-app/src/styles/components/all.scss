@@ -63,14 +63,14 @@
 
 //intro overlays
 .see-all-overlay {
-  .bottom {
+  .parallax-overlay {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     position: absolute;
     bottom: 0;
     width: 100vw;
     z-index: 8;
-    .overlay-bottom {
+    .overlay-page {
       position: absolute;
       height: 100%;
       width: 100vw;
