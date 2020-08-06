@@ -59,6 +59,12 @@
 .parallax-img {
   max-width: 30%;
   transform: translateZ(0);
+  @include media("<=tablet") {
+    max-width: 80%;
+  }
+  @include media("<=phone") {
+    max-width: 100%;
+  }
 }
 
 //parallax overlay transition
