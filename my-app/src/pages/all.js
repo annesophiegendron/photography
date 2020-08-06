@@ -69,9 +69,38 @@
 // export default All
 
 import React from "react"
-import { useState, useRef, useLayoutEffect } from "react"
+import { useState, useEffect, useRef, useLayoutEffect } from "react"
+
+//assets
 import { images } from "../assets/images-all.js"
+
+//libraries
 import { motion, useViewportScroll, useTransform } from "framer-motion"
+import gsap from 'gsap'
+
+//components
+import SeeAllOverlay from '../components/seeAllOverlay'
+
+const allAnimation = (completeAnimation) => {
+  const tl = gsap.timeline()
+
+  tl.from(".overlay-top", 1.6, {
+    height: 0,
+    ease: "expo.inOut",
+    stagger: 0.4,
+  })
+    .to(".overlay-bottom", 1.6, {
+    width: 0,
+    ease: "expo.inOut", 
+    delay: -.8,
+    stagger: {
+      amount: 0.4,
+    }
+    })
+    .to(".see-all-overlay", 0, {
+      css: { display: "none" },
+    })
+}
 
 const ParallaxImage = ({ src, ...style }) => {
   const [elementTop, setElementTop] = useState(0)
@@ -95,14 +124,30 @@ const ParallaxImage = ({ src, ...style }) => {
   );
 };
 
-const All = () => (
-  <div className="all-wrapper">
-    <div className="parallax-container">
-      {images.map(image => (
-        <ParallaxImage key={image.src} {...image} />
-      ))}
-    </div>
-  </div>
-)
+const All = () => {
+  const [animationComplete, setAnimationComplete] = useState(false)
+
+  const completeAnimation = () => {
+    setAnimationComplete(true)
+  }
+
+  useEffect(() => {    
+   allAnimation(completeAnimation)
+  }, [])
+
+  return (
+    <>
+      {animationComplete === false ? <SeeAllOverlay /> : ""}
+      <div className="all-wrapper">
+        <div className="parallax-container">
+          <SeeAllOverlay />
+          {images.map(image => (
+            <ParallaxImage key={image.src} {...image} />
+          ))}
+        </div>
+      </div> 
+    </>
+  )
+}
 
 export default All
