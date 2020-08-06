@@ -1,8 +1,37 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+// libraries
+import gsap from 'gsap'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
+
+// assets
 import { images } from "../../assets/serie-page/image-data-serieThree"
+
+//components
+import SerieOverlay from '../../components/serieOverlay'
+
+const serieAnimation = (completeAnimation) => {
+  const tl = gsap.timeline()
+
+  tl.from(".serie-overlay-container", 0, {
+      height: 0,
+      ease: "expo.inOut",
+      stagger: 0.4,
+  })
+    .to(".serie-transition", 0.9, {
+      height: 0,
+      ease: "expo.inOut",
+      delay: .3,
+      stagger: {
+        amount: 0.4,
+      }
+    })
+    .to(".serie-overlay-container", 0, {
+      css: { display: "none" },
+    })
+}
 
 const variants = {
   enter: (direction: number) => {
@@ -26,6 +55,8 @@ const variants = {
 }
 
 export const SerieThree = () => {
+  const [animationComplete, setAnimationComplete] = useState(false)
+
   const [[page, direction], setPage] = useState([0, 0])
   const imageIndex = wrap(0, images.length, page)
 
@@ -33,8 +64,17 @@ export const SerieThree = () => {
     setPage([page + newDirection, newDirection])
   }
 
+  const completeAnimation = () => {
+    setAnimationComplete(true)
+  }
+  useEffect(() => {    
+   serieAnimation(completeAnimation)
+  }, [])
+
 return (
   <>
+    {animationComplete === false ? <SerieOverlay /> : ""}
+
     <AnimatePresence initial={false} custom={direction}>
       <motion.div className="slider-container">
       <motion.img

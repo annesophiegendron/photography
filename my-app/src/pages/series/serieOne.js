@@ -16,17 +16,17 @@ const serieAnimation = (completeAnimation) => {
   const tl = gsap.timeline()
 
   tl.from(".serie-overlay-container", 0, {
-    height: 0,
-    ease: "expo.inOut",
-    stagger: 0.4,
+      height: 0,
+      ease: "expo.inOut",
+      stagger: 0.4,
   })
-    .to(".serie-transition", .9, {
-    height: 0,
-    ease: "expo.inOut", 
-    delay: .2,
-    stagger: {
-      amount: 0.4,
-    }
+    .to(".serie-transition", 0.9, {
+      height: 0,
+      ease: "expo.inOut",
+      delay: .3,
+      stagger: {
+        amount: 0.4,
+      }
     })
     .to(".serie-overlay-container", 0, {
       css: { display: "none" },
