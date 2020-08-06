@@ -84,12 +84,12 @@ import SeeAllOverlay from '../components/seeAllOverlay'
 const allAnimation = (completeAnimation) => {
   const tl = gsap.timeline()
 
-  tl.from(".overlay-top", 1.6, {
+  tl.from(".see-all-overlay", 1.6, {
     height: 0,
     ease: "expo.inOut",
     stagger: 0.4,
   })
-    .to(".overlay-bottom", 1.6, {
+    .to(".overlay-page", 1.6, {
     width: 0,
     ease: "expo.inOut", 
     delay: -.8,

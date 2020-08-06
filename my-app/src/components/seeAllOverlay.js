@@ -5,8 +5,8 @@ const SeeAllOverlay = () => {
   return (
     <>
       <div className="see-all-overlay">
-        <div className="bottom">
-          <div className="overlay-bottom"></div>
+        <div className="parallax-overlay">
+          <div className="overlay-page"></div>
         </div>
       </div>
     </>
