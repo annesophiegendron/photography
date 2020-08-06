@@ -53,7 +53,7 @@ const Series = () => {
               
               <NavLink to={`${serieItem.link}`} exact> 
                 <motion.div
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.1, transition: 0.95 }}
                   transition={transition}
                   className="serie-details">
                   <span>{serieItem.subtitle}</span>
