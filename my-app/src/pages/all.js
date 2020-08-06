@@ -89,7 +89,7 @@ const allAnimation = (completeAnimation) => {
     ease: "expo.inOut",
     stagger: 0.4,
   })
-    .to(".overlay-page", 1.6, {
+    .to(".overlay-transition", 1.6, {
     width: 0,
     ease: "expo.inOut", 
     delay: -.8,
@@ -121,8 +121,8 @@ const ParallaxImage = ({ src, ...style }) => {
       <motion.div className="overlay" style={{ ...style, y }} />
       <img className="parallax-img" src={src} alt="" />
     </div>
-  );
-};
+  )
+}
 
 const All = () => {
   const [animationComplete, setAnimationComplete] = useState(false)
