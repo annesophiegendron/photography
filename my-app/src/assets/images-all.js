@@ -7,7 +7,7 @@ export const images = [
     height: 400,
     left: 300,
     top: 0
-  },
+  }, 
   {
     src:
       "https://res.cloudinary.com/dc2tplzzd/image/upload/v1596458844/photography%20website/11EBA3B9-B41C-4B9B-A222-2DCCACACED8F_m4on2x.jpg",
