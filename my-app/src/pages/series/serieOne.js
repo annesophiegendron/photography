@@ -21,7 +21,7 @@ const serieAnimation = (completeAnimation) => {
     stagger: 0.4,
   })
     .to(".serie-transition", .9, {
-    width: 0,
+    height: 0,
     ease: "expo.inOut", 
     delay: .2,
     stagger: {
