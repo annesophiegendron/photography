@@ -107,7 +107,7 @@ const ParallaxImage = ({ src, ...style }) => {
   const ref = useRef(null)
   const { scrollY } = useViewportScroll()
 
-  const y = useTransform(scrollY, [elementTop, elementTop + 2], [0, -1], {
+  const y = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
     clamp: false
   })
 
