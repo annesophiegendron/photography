@@ -61,8 +61,29 @@
     }
   }
 }
-
-.message {
+ 
+.message-circle {
   margin-left: 50%;
+  background-color: #91D9CC;
+  margin-top: -8vh;
+  border-radius: 100px;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border: solid 2px #91D9CC;
+  justify-content: center;
+  @include media("<=phone") {
+    visibility: hidden;;
+  }
+  @include media("<=tablet") {
+    visibility: hidden;
+  }
 }
 
+.message {
+  padding: 60px;
+  font-size: 18px;
+  color: #0D0D0D;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
