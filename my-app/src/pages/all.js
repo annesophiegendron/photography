@@ -73,8 +73,8 @@ const All = () => {
           <motion.div
             className="message-circle"
             animate={{
-              scale: [3.5, 2, 1.5, 1.5, 1],
-              opacity: [0, 0.2, 0.5, 1]
+              scale: [3, 2, 1.5, 1.5, 1],
+              opacity: [0.2, 0.5, 1]
             }}
             transition={{
               duration: 2.4,
