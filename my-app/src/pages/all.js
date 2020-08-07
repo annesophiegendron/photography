@@ -70,6 +70,8 @@ const All = () => {
       <div className="all-wrapper">
         <div className="parallax-container">
           <SeeAllOverlay />
+          <p className="message">scroll down</p>
+
           {images.map(image => (
             <ParallaxImage key={image.src} {...image} />
           ))}
