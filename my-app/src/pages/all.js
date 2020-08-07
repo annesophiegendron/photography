@@ -70,8 +70,19 @@ const All = () => {
       <div className="all-wrapper">
         <div className="parallax-container">
           <SeeAllOverlay />
-          <p className="message">scroll down</p>
-
+          <motion.div
+            className="message-circle"
+            animate={{
+              scale: [3.5, 2, 1.5, 1.5, 1],
+              opacity: [0, 0.2, 0.5, 1]
+            }}
+            transition={{
+              duration: 2.4,
+              ease: "easeInOut",
+            }}
+          >
+            <p className="message">scroll down</p>
+          </motion.div>
           {images.map(image => (
             <ParallaxImage key={image.src} {...image} />
           ))}
