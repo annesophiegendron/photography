@@ -15,16 +15,16 @@ const allAnimation = (completeAnimation) => {
   const tl = gsap.timeline()
 
   tl.from(".see-all-overlay", 0, {
-    height: 0,
+    width: 0,
     ease: "expo.inOut",
     stagger: 0.4,
   })
-    .to(".overlay-transition", .9, {
-    width: 0,
+    .to(".overlay-transition", 1.1, {
+    height: 0,
     ease: "expo.inOut", 
-    delay: .2,
+    delay: .4,
     stagger: {
-      amount: 0.4,
+      amount: 0,
     }
     })
     .to(".see-all-overlay", 0, {
