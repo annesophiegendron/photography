@@ -37,7 +37,7 @@ const ParallaxImage = ({ src, ...style }) => {
   const ref = useRef(null)
   const { scrollY } = useViewportScroll()
 
-  const y = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
+  const x = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
     clamp: false
   })
 
@@ -48,7 +48,7 @@ const ParallaxImage = ({ src, ...style }) => {
 
   return (
     <div ref={ref} className="image-container">
-      <motion.div className="overlay" style={{ ...style, y }} />
+      <motion.div className="overlay" style={{ ...style, x }} />
       <img className="parallax-img" src={src} alt="" />
     </div>
   )

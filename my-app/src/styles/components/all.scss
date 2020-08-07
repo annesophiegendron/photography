@@ -18,12 +18,12 @@
   padding-right: 10vh;
   transform-origin: top left;
   white-space:nowrap;
-}
+} 
 
 .image-container {
   position: relative;
   margin-bottom: 50px;
-  z-index: 2;
+  z-index: 1;
   transform: rotate(90deg) translateX(50%);
 }
 
