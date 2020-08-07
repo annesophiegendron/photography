@@ -1,10 +1,6 @@
 
 // parallax
 .all-wrapper {
-  // height: 100vh;
-  // width: 100vw;
-  // background: $white;
-
   overflow-y:scroll;
   overflow-x:hidden;
   transform: rotate(270deg) translateX(-100%);
@@ -18,21 +14,16 @@
 .parallax-container {
   overflow: hidden;
   background: $white;
-  // margin: 0 auto;
-  // perspective: 1200px;
+  perspective: -100px;
   padding-right: 10vh;
-  // justify-content: center;
-  // text-align: center;
-
-  // transform-origin: top left;
-  // white-space:nowrap;
+  transform-origin: top left;
+  white-space:nowrap;
 }
 
 .image-container {
   position: relative;
   margin-bottom: 50px;
   z-index: 2;
-  // transform: translateY(0);
   transform: rotate(90deg) translateX(50%);
 }
 
@@ -61,16 +52,13 @@
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     position: absolute;
-    // top: 0;
+    // right: 0%;
     width: 100vw;
     z-index: 8;
     .overlay-transition {
-      // position: absolute;
       height: 100vh;
       width: 100vw;
       background: $black;
-      // top: 0;
-      // top: 0%;
     }
   }
 }
