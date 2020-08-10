@@ -24,6 +24,11 @@ const Navigation = () => {
                   serie 003
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/all" exact>
+                  see all
+                </NavLink>
+              </li>
               </ul>
           </div>
           <div className="nav-column">
