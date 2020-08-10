@@ -54,8 +54,6 @@ export const images = [
     top: "50%"
   },
   {
-    src:
-      "https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638590/photography%20website/AF333879-D492-48E4-9287-189F37660D91_1_105_c_vorkzm.jpg",
     background: "#91D9CC",
     width: 500,
     height: 400,

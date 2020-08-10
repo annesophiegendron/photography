@@ -70,8 +70,9 @@ const All = () => {
       <div className="all-wrapper">
         <div className="parallax-container">
           <SeeAllOverlay />
+
           <motion.div
-            className="message-circle"
+            className="container-scrolldown"
             animate={{
               scale: [3, 2, 1.5, 1.5, 1],
               opacity: [0.2, 0.5, 1]
@@ -83,6 +84,7 @@ const All = () => {
           >
             <p className="message">scroll down</p>
           </motion.div>
+
           {images.map(image => (
             <ParallaxImage key={image.src} {...image} />
           ))}
