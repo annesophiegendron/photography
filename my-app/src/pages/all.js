@@ -61,7 +61,6 @@ const ParallaxImage = ({ src, ...style }) => {
           transition: { duration: 0.8 },
           opacity: 1
         }}
-        whileTap={{ scale: 2 }}
       >
       </motion.img>
     </div>
