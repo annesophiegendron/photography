@@ -48,12 +48,22 @@ const ParallaxImage = ({ src, ...style }) => {
 
   return (
     <div ref={ref} className="image-container">
-      <motion.div className="overlay" style={{ ...style, x }} />
-      <img
+      <motion.div
+        className="overlay"
+        style={{ ...style, x }}
+      />
+      <motion.img
         className="parallax-img"
         src={src}
         alt=""
-      />
+        whileHover={{
+          scale: 1.4,
+          transition: { duration: 0.8 },
+          opacity: 1
+        }}
+        whileTap={{ scale: 2 }}
+      >
+      </motion.img>
     </div>
   )
 }
@@ -89,13 +99,13 @@ const All = () => {
             <p className="message">scroll down</p>
           </motion.div>
           
-          <motion.div className="test-container">
-            {images.map(image => (
-              <div>
-                <ParallaxImage key={image.src} {...image} />
-              </div>
-            ))}   
-          </motion.div>
+            <motion.div className="test-container">
+              {images.map(image => (
+                <div>
+                  <ParallaxImage key={image.src} {...image} />
+                </div>
+              ))}   
+            </motion.div>
 
         </div>
       </div> 
