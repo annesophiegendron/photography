@@ -47,18 +47,18 @@ export const images = [
   {
     src:
       "https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638303/photography%20website/894C43E2-B6EB-41EE-A51B-DD6F292FF7BC_1_105_c_osiudx.jpg",
-    background: "#0D0D0D",
-    width: "120%",
-    height: 200,
-    left: "-10%",
-    top: "50%"
+    background: "#91D9CC",
+    width: 300,
+    height: 400,
+    left: 0,
+    top: 300
   },
   {
+    src:"https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg",
     background: "#91D9CC",
     width: 500,
     height: 400,
     left: "50%",
-    top: 100
-  },
-
+    top: 100,
+  }
 ]
