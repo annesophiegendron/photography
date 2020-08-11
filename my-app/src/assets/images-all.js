@@ -24,7 +24,7 @@ export const images = [
     width: 500,
     height: 300,
     left: "-20%",
-    top: "30%"
+    top: "20%"
   },
   {
     src:
