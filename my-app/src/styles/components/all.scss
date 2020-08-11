@@ -10,11 +10,10 @@
   width:100vh;
   height:100vw;
 } 
-
+ 
 .parallax-container {
   overflow: hidden;
   background: $white;
-  perspective: -100px;
   padding-right: 10vh;
   transform-origin: top left;
   white-space:nowrap;
@@ -24,7 +23,7 @@
   position: relative;
   margin-bottom: 50px;
   z-index: 1;
-  transform: rotate(90deg) translateX(50%);
+  transform: rotate(90deg) translateX(-100px);
 }
 
 .overlay {
@@ -37,7 +36,7 @@
 
 .parallax-img {
   width: 60%;
-  transform: translateZ(0);
+  margin-bottom: 10vh;
   @include media("<=tablet") {
     max-width: 80%;
   }
@@ -88,4 +87,10 @@
   letter-spacing: 1px;
 }
 
-
+.test-container {
+  height: 100%;
+  // max-width: 600px;
+  // margin: 0 auto;
+  padding-top: 22vh;
+  padding-bottom: 10vh;
+}

@@ -35,9 +35,9 @@ const allAnimation = (completeAnimation) => {
 const ParallaxImage = ({ src, ...style }) => {
   const [elementTop, setElementTop] = useState(0)
   const ref = useRef(null)
-  const { scrollY } = useViewportScroll()
+  const { scrollX } = useViewportScroll()
 
-  const x = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
+  const x = useTransform(scrollX, [elementTop, elementTop + 1], [0, -1], {
     clamp: false
   })
 
@@ -49,7 +49,11 @@ const ParallaxImage = ({ src, ...style }) => {
   return (
     <div ref={ref} className="image-container">
       <motion.div className="overlay" style={{ ...style, x }} />
-      <img className="parallax-img" src={src} alt="" />
+      <img
+        className="parallax-img"
+        src={src}
+        alt=""
+      />
     </div>
   )
 }
@@ -84,10 +88,15 @@ const All = () => {
           >
             <p className="message">scroll down</p>
           </motion.div>
+          
+          <motion.div className="test-container">
+            {images.map(image => (
+              <div>
+                <ParallaxImage key={image.src} {...image} />
+              </div>
+            ))}   
+          </motion.div>
 
-          {images.map(image => (
-            <ParallaxImage key={image.src} {...image} />
-          ))}
         </div>
       </div> 
     </>
