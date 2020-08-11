@@ -19,7 +19,7 @@ export const images = [
   },
   {
     src:
-      "https://res.cloudinary.com/dc2tplzzd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1596449628/photography%20website/68A4ABEB-0EF7-4FD3-BD9B-F01450B2177C_1_105_c_ft91v4-Sharpened_lzhrl5.jpg",
+      "https://res.cloudinary.com/dc2tplzzd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1597134425/photography%20website/jr-korpa-wzkv5p5CIRk-unsplash_x9gqe1.jpg",
     background: "#8C8C8C",
     width: 500,
     height: 300,
@@ -37,7 +37,7 @@ export const images = [
   },
   {
     src:
-      "https://res.cloudinary.com/dc2tplzzd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1596637802/photography%20website/9066A5EA-FDAC-4C1E-8E46-584A61D22937_1_105_c_pe1jte.jpg",
+      "https://res.cloudinary.com/dc2tplzzd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1597134417/photography%20website/alp-allen-altiner-DfAJSNZEo5k-unsplash_zpcgle.jpg",
     background: "#D9D9D9",
     width: 500,
     height: 200,
