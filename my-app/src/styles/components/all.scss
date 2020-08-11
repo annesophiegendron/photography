@@ -36,8 +36,10 @@
 
 .parallax-img {
   width: 60%;
-  margin-bottom: 10vh;
-  opacity: 0.8;
+  margin-bottom: 5vh;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  opacity: 0.2;
   @include media("<=tablet") {
     max-width: 80%;
   }
