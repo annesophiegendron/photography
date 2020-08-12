@@ -7,6 +7,7 @@ import { images } from "../assets/images-all.js"
 //libraries
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import gsap from 'gsap'
+import { Override, motionValue } from "framer"
 
 //components
 import SeeAllOverlay from '../components/seeAllOverlay'
@@ -37,8 +38,8 @@ const ParallaxImage = ({ src, ...style }) => {
   const ref = useRef(null)
   const { scrollX } = useViewportScroll()
 
-  const x = useTransform(scrollX, [elementTop, elementTop + 1], [0, -1], {
-    clamp: false
+  const x = useTransform(scrollX, [elementTop, elementTop + 2], [0, -2], {
+    clamp: true
   })
 
   useLayoutEffect(() => {
@@ -48,19 +49,21 @@ const ParallaxImage = ({ src, ...style }) => {
 
   return (
     <div ref={ref} className="image-container">
+
       <motion.div
         className="overlay"
         style={{ ...style, x }}
       />
+
       <motion.img
         className="parallax-img"
         src={src}
         alt=""
         whileHover={{
-          scale: 1.5,
+          scale: 1.3,
           opacity: 1,
         }}
-        transition={{ type: 'spring', stiffness: 50, velocity:1}}
+        transition={{ type: 'spring', stiffness: 80, velocity:0.9}}
       >
       </motion.img>
     </div>
@@ -73,8 +76,9 @@ const All = () => {
   const completeAnimation = () => {
     setAnimationComplete(true)
   }
+
   useEffect(() => {    
-   allAnimation(completeAnimation)
+    allAnimation(completeAnimation)
   }, [])
 
   return (
@@ -98,7 +102,7 @@ const All = () => {
             <p className="message">scroll down</p>
           </motion.div>
           
-            <motion.div className="test-container">
+          <motion.div className="test-container">
               {images.map(image => (
                 <div>
                   <ParallaxImage key={image.src} {...image} />

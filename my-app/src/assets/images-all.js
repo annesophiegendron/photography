@@ -21,9 +21,9 @@ export const images = [
     src:
       "https://res.cloudinary.com/dc2tplzzd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1597134425/photography%20website/jr-korpa-wzkv5p5CIRk-unsplash_x9gqe1.jpg",
     background: "#8C8C8C",
-    width: 500,
+    width: 400,
     height: 300,
-    left: "-20%",
+    left: "-10%",
     top: "20%"
   },
   {
