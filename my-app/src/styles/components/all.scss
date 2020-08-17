@@ -12,17 +12,16 @@
 } 
  
 .parallax-container {
-  overflow: hidden;
   background: $white;
   padding-right: 10vh;
   transform-origin: top left;
   white-space:nowrap;
+  position: relative;
 } 
 
 .image-container {
   position: relative;
   margin-bottom: 50px;
-  z-index: 1;
   transform: rotate(90deg) translateX(-100px);
 }
 
@@ -32,15 +31,12 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  z-index: -1;
+  z-index: -99;
 }
 
 .parallax-img {
   width: 55%;
-  margin-bottom: 5vh;
-  padding-bottom: 2rem;
-  padding-top: 4rem;
-  opacity: 0.5  ;
+  margin-left: 25rem;
   @include media("<=tablet") {
     max-width: 80%;
   }
