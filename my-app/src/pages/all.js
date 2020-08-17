@@ -59,7 +59,6 @@ const Content = ({ src }) => {
         whileHover={{
           scale: 1.1,
         }}
-        whileTap={{ scale: 2 }}
         transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
         ref={contentRef}
         animate={animation}
