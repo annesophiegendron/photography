@@ -32,15 +32,17 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  z-index: -1;
+  z-index: -99;
 }
 
 .parallax-img {
   width: 55%;
-  margin-bottom: 5vh;
+  margin-bottom: 6vh;
   padding-bottom: 2rem;
   padding-top: 4rem;
-  opacity: 0.5  ;
+  padding-left: 15rem;
+  opacity: 1;
+  z-index: 99;
   @include media("<=tablet") {
     max-width: 80%;
   }

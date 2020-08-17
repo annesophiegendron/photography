@@ -97,7 +97,7 @@ const All = () => {
               ease: "easeInOut",
             }}
           >
-            <p className="message">scroll down</p>
+            <p className="message">scroll</p>
           </motion.div>
           
           <motion.div className="test-container">
