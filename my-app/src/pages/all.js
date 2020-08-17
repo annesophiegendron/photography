@@ -53,13 +53,13 @@ const Content = ({ src }) => {
   return (
     <motion.div className="image-container">
       <motion.img
-        className="parallax-img"
+        className="content"
         src={src}
         alt=""
         whileHover={{
           scale: 1.1,
-          opacity: 1,
         }}
+        whileTap={{ scale: 2 }}
         transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
         ref={contentRef}
         animate={animation}
@@ -88,8 +88,8 @@ const All = () => {
     <>
       {animationComplete === false ? <SeeAllOverlay /> : ""}
       <AnimatePresence>
-        <div className="all-wrapper">
-          <div className="parallax-container">
+        <div className="wrapper">
+          <div className="sub-container">
             <SeeAllOverlay />
             <motion.div
               className="container-scrolldown"

@@ -1,6 +1,6 @@
 
-// parallax
-.all-wrapper {
+// Images Container
+.wrapper {
   overflow-y:scroll;
   overflow-x:hidden;
   transform: rotate(270deg) translateX(-100%);
@@ -11,7 +11,7 @@
   height:100vw;
 } 
  
-.parallax-container {
+.sub-container {
   background: $white;
   padding-right: 10vh;
   transform-origin: top left;
@@ -21,22 +21,15 @@
 
 .image-container {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   transform: rotate(90deg) translateX(-100px);
 }
 
-.overlay {
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  z-index: -99;
-}
+.content {
+  width: 60%;
+  margin-left: 35rem;
+  margin-bottom: 50px;
 
-.parallax-img {
-  width: 55%;
-  margin-left: 25rem;
   @include media("<=tablet") {
     max-width: 80%;
   }
@@ -45,7 +38,7 @@
   }
 }
 
-//parallax overlay transition
+// overlay transition
 .see-all-overlay {
   .parallax-overlay {
     height: 100vh;
@@ -61,6 +54,7 @@
   }
 }
  
+// Info scroll div
 .container-scrolldown {
   margin-left: 50%;
   background-color: #91D9CC;
