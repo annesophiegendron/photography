@@ -9,21 +9,21 @@ import { ReactComponent as SeriesPrev } from '../assets/arrow-left.svg'
 const photoSeries = [
   {
     id: 1,
-    subtitle: 'Oskar',
+    subtitle: 'Serie',
     title: '001', 
     img: 'dad-and-son-beach',
     link: '/serie001',
   },
   {
     id: 2,
-    subtitle: 'Them',
+    subtitle: 'Serie',
     title: '002', 
     img: 'wood',
     link: '/serie002',
   },
   {
     id: 3,
-    subtitle: 'Territories',
+    subtitle: 'Serie',
     title: '003', 
     img: 'beach',
     link: '/serie003',

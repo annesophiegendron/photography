@@ -7,7 +7,6 @@ import { images } from "../assets/images-all.js"
 //libraries
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import gsap from 'gsap'
-import { Override, motionValue } from "framer"
 
 //components
 import SeeAllOverlay from '../components/seeAllOverlay'
@@ -72,7 +71,6 @@ const ParallaxImage = ({ src, ...style }) => {
 
 const All = () => {
   const [animationComplete, setAnimationComplete] = useState(false)
-
   const completeAnimation = () => {
     setAnimationComplete(true)
   }
