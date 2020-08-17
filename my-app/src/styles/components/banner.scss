@@ -2,6 +2,7 @@
   height: 50vh;
   height: calc(var(--vh, 1vh) * 50);
   background-color: $white;
+  box-sizing: border-box;
   .row {
     flex-direction: column;
     justify-content: center;
