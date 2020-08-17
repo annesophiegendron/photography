@@ -2,7 +2,6 @@ import React from 'react'
 import { ReactComponent as RightArrow } from '../assets/arrow-right.svg'
 import { NavLink } from 'react-router-dom'
 
-
 const Banner = () => {
   return (
     <section className="main">
