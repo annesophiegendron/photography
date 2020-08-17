@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { images } from "../assets/images-all.js"
 
 //libraries
-import { motion, useTransform, useAnimation } from "framer-motion"
+import { motion, useTransform, useAnimation, AnimatePresence } from "framer-motion"
 import gsap from 'gsap'
 
 //components
@@ -37,105 +37,82 @@ const allAnimation = (completeAnimation) => {
 }
 
 // Content animation
-// const Content = ({ src }) => {
-//   return (
-//     <div className="image-container">
-//       <motion.img
-//         className="parallax-img"
-//         src={src}
-//         alt=""
-//         whileHover={{
-//           scale: 1.3,
-//           opacity: 1,
-//         }}
-//         transition={{ type: 'spring', stiffness: 80, velocity:0.9}}
-//       >
-//       </motion.img>
-//     </div>
-//   )
-// }
-
-const All = () => {
-  // const [animationComplete, setAnimationComplete] = useState(false)
-  // const completeAnimation = () => {
-  //   setAnimationComplete(true)
-  // }
-
+const Content = ({ src }) => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-1000px", // the animation occurs with a small delay when scrolling
+    rootMargin: "-400px" // the animation occurs with a small delay when scrolling
   })
 
-  useEffect(() => {    
-    // allAnimation(completeAnimation)
+    useEffect(() => {    
     if (inView) {
       animation.start("visible")
     }
   }, [animation, inView])
-
+  
   return (
-    <>
-      {/* {animationComplete === false ? <SeeAllOverlay /> : ""} */}
-      <motion.div
-        className="all-wrapper" //HOMECONTENTSECTION
+    <motion.div className="image-container">
+      <motion.img
+        className="parallax-img"
+        src={src}
+        alt=""
+        whileHover={{
+          scale: 1.1,
+          opacity: 1,
+        }}
+        transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
         ref={contentRef}
         animate={animation}
         initial="hidden"
         variants={{
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] },
-          },
-          hidden: {
-            opacity: 0,
-            y: 72,
-          }
+          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: 300 }
         }}
       >
-
-        <div className="parallax-container"> 
-            <div className="image-container">
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            <img className="parallax-img" src="https://res.cloudinary.com/dc2tplzzd/image/upload/v1596638433/photography%20website/38CB9972-6034-48A9-B006-FCDCEA1B01E7_1_102_o_ixs0kq.jpg"></img>
-            </div>
-        </div>
+      </motion.img>
     </motion.div>
+  )
+}
 
-      {/* <div className="all-wrapper">
-        <div className="parallax-container">
-          <SeeAllOverlay />
+const All = () => {
+  const [animationComplete, setAnimationComplete] = useState(false)
+  const completeAnimation = () => {
+    setAnimationComplete(true)
+  }
 
-          <motion.div
-            className="container-scrolldown"
-            animate={{
-              scale: [3, 2, 1.5, 1.5, 1],
-              opacity: [0.2, 0.5, 1]
-            }}
-            transition={{
-              duration: 2.4,
-              ease: "easeInOut",
-            }}
-          >
-            <p className="message">scroll</p>
-          </motion.div>
-          
-          <motion.div className="test-container">
-              {images.map(image => (
-                <div>
-                  <Content key={image.src} {...image} />
-                </div>
-              ))}   
+  useEffect(() => {    
+    allAnimation(completeAnimation)
+  }, [])
+
+  return (
+    <>
+      {animationComplete === false ? <SeeAllOverlay /> : ""}
+      <AnimatePresence>
+        <div className="all-wrapper">
+          <div className="parallax-container">
+            <SeeAllOverlay />
+            <motion.div
+              className="container-scrolldown"
+              animate={{
+                scale: [2, 1, 1.5, 1.5, 1],
+                opacity: [0.2, 0.5, 1]
+              }}
+              transition={{
+                duration: 2.4,
+                ease: "easeInOut",
+              }}
+            >
+              <p className="message">scroll</p>
             </motion.div>
-        </div>
-      </div>  */}
+
+            {images.map(image => (
+              <div>
+                <Content key={image.src} {...image} />
+              </div>
+            ))}   
+          </div>
+        </div> 
+      </AnimatePresence>
     </>
   )
 }
