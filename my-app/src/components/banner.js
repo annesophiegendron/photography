@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as RightArrow } from '../assets/arrow-right.svg'
+import { ReactComponent as RightArrow } from '../assets/icons/arrow-right.svg'
 import { NavLink } from 'react-router-dom'
 
 const Banner = () => {
