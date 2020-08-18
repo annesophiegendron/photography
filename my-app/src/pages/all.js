@@ -83,6 +83,18 @@ const All = () => {
     allAnimation(completeAnimation)
   }, [])
 
+  const animation = useAnimation()
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-400px" // the animation occurs with a small delay when scrolling
+  })
+
+    useEffect(() => {    
+    if (inView) {
+      animation.start("visible")
+    }
+  }, [animation, inView])
+
   return (
     <>
       {animationComplete === false ? <SeeAllOverlay /> : ""}
@@ -103,8 +115,6 @@ const All = () => {
             >
               <p className="message">scroll</p>
             </motion.div>
-
-            <div>HELLO</div>
 
             {images.map(image => (
               <div>
