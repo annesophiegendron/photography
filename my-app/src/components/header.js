@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { NavLink, withRouter } from 'react-router-dom'
-import { ReactComponent as UpArrow } from '../assets/up-arrow-circle.svg'
+import { ReactComponent as UpArrow } from '../assets/icons/up-arrow-circle.svg'
 
 
 import gsap from 'gsap'

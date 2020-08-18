@@ -1,5 +1,5 @@
 ## Link to deployed project
-https://photography-captures-annesophie.vercel.app/
+https://photography.annesophiegendron.vercel.app/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
