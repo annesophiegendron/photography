@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { images } from "../assets/images-all.js"
 
 //libraries
-import { motion, useTransform, useAnimation, AnimatePresence } from "framer-motion"
+import { motion, useAnimation, AnimatePresence } from "framer-motion"
 import gsap from 'gsap'
 
 //components
@@ -74,6 +74,8 @@ const Content = ({ src, visible }) => {
 }
 
 const All = () => {
+
+  // opening page transition
   const [animationComplete, setAnimationComplete] = useState(false)
   const completeAnimation = () => {
     setAnimationComplete(true)
@@ -82,18 +84,6 @@ const All = () => {
   useEffect(() => {    
     allAnimation(completeAnimation)
   }, [])
-
-  const animation = useAnimation()
-  const [contentRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-400px" // the animation occurs with a small delay when scrolling
-  })
-
-    useEffect(() => {    
-    if (inView) {
-      animation.start("visible")
-    }
-  }, [animation, inView])
 
   return (
     <>
@@ -117,8 +107,10 @@ const All = () => {
             </motion.div>
 
             {images.map(image => (
-              <div>
-                <Content key={image.src} {...image} />
+              <div key={image.id}>
+                <Content
+                  key={image.src}
+                  {...image} />
               </div>
             ))}   
           </div>

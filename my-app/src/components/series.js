@@ -3,9 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 import { motion } from 'framer-motion'
 
-import { ReactComponent as SeriesNext } from '../assets/arrow-right.svg'
-import { ReactComponent as SeriesPrev } from '../assets/arrow-left.svg'
-
 const photoSeries = [
   {
     id: 1,
