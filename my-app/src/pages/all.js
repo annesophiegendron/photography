@@ -37,7 +37,7 @@ const allAnimation = (completeAnimation) => {
 }
 
 // Content animation
-const Content = ({ src }) => {
+const Content = ({ src, visible }) => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
