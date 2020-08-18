@@ -128,7 +128,7 @@ const Header = ({ history, dimensions }) => {
         }
         })
     }
-  }, [menuState.menuOpened])
+  }, [menuState.menuOpened, dimensions.width, dimensions.height, history])
 
 
   return (
