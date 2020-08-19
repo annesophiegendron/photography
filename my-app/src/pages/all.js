@@ -44,6 +44,11 @@ const Content = ({ src, visible }) => {
     rootMargin: "-400px" // the animation occurs with a small delay when scrolling
   })
 
+  const variants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 300 }
+  }
+
     useEffect(() => {    
     if (inView) {
       animation.start("visible")
@@ -63,10 +68,7 @@ const Content = ({ src, visible }) => {
         ref={contentRef}
         animate={animation}
         initial="hidden"
-        variants={{
-          visible: { opacity: 1, x: 0 },
-          hidden: { opacity: 0, x: 300 }
-        }}
+        variants={variants}
       >
       </motion.img>
     </motion.div>
@@ -110,7 +112,8 @@ const All = () => {
               <div key={image.id}>
                 <Content
                   key={image.src}
-                  {...image} />
+                  {...image}
+                />
               </div>
             ))}   
           </div>
