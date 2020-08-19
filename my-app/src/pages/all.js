@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { images } from "../assets/images-all.js"
 
 //libraries
-import { motion, useAnimation, AnimatePresence } from "framer-motion"
+import { motion, useAnimation, AnimatePresence, useCycle } from "framer-motion"
 import gsap from 'gsap'
 
 //components
@@ -44,11 +44,6 @@ const Content = ({ src, visible }) => {
     rootMargin: "-400px" // the animation occurs with a small delay when scrolling
   })
 
-  const variants = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: 300 }
-  }
-
     useEffect(() => {    
     if (inView) {
       animation.start("visible")
@@ -56,26 +51,35 @@ const Content = ({ src, visible }) => {
   }, [animation, inView])
   
   return (
-    <motion.div className="image-container">
-      <motion.img
-        className="content"
-        src={src}
-        alt=""
-        whileHover={{
-          scale: 1.1,
-        }}
-        transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
-        ref={contentRef}
-        animate={animation}
-        initial="hidden"
-        variants={variants}
-      >
-      </motion.img>
-    </motion.div>
+    <AnimatePresence>
+      {visible && (
+            <motion.div className="image-container">
+            <motion.img
+              className="content"
+              src={src}
+              alt=""
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
+              ref={contentRef}
+              animate={animation}
+              initial="hidden"
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 300 }
+              }}
+            >
+            </motion.img>
+            </motion.div>
+      )}
+
+    </AnimatePresence>
   )
 }
 
 const All = () => {
+  const [visible, onCycle] = useCycle(true, false)
 
   // opening page transition
   const [animationComplete, setAnimationComplete] = useState(false)
@@ -90,7 +94,7 @@ const All = () => {
   return (
     <>
       {animationComplete === false ? <SeeAllOverlay /> : ""}
-      <AnimatePresence exitBeforeEnter>
+      {/* <AnimatePresence> */}
         <div className="wrapper">
           <div className="sub-container">
             <SeeAllOverlay />
@@ -113,12 +117,13 @@ const All = () => {
                 <Content
                   key={image.src}
                   {...image}
+                  visible={visible}
                 />
               </div>
             ))}   
           </div>
         </div> 
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </>
   )
 }
