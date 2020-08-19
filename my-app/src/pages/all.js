@@ -47,18 +47,20 @@ const Content = ({ src, visible }) => {
     useEffect(() => {    
     if (inView) {
       animation.start("visible")
-    } else {
-      animation.stop("hidden")
     }
   }, [animation, inView])
   
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div className="image-container">
+            <motion.div className="image-container">
             <motion.img
               className="content"
               src={src}
+              alt=""
+              whileHover={{
+                scale: 1.1,
+              }}
               transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
               ref={contentRef}
               animate={animation}
@@ -76,7 +78,7 @@ const Content = ({ src, visible }) => {
 }
 
 const All = () => {
-  const [visible, setVisible] = useState()
+  const [visible, onCycle] = useCycle(true, false)
 
   // opening page transition
   const [animationComplete, setAnimationComplete] = useState(false)
@@ -114,7 +116,7 @@ const All = () => {
                 <Content
                   key={image.src}
                   {...image}
-                  visible={setVisible}
+                  visible={visible}
                 />
               </div>
             ))}   
