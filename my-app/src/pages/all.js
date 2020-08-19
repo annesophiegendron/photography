@@ -71,15 +71,14 @@ const Content = ({ src, visible }) => {
               }}
             >
             </motion.img>
-            </motion.div>
+        </motion.div>
       )}
-
     </AnimatePresence>
   )
 }
 
 const All = () => {
-  const [visible, onCycle] = useCycle(true, false)
+  const [visible, setVisible] = useState()
 
   // opening page transition
   const [animationComplete, setAnimationComplete] = useState(false)
@@ -94,7 +93,7 @@ const All = () => {
   return (
     <>
       {animationComplete === false ? <SeeAllOverlay /> : ""}
-      {/* <AnimatePresence> */}
+      <AnimatePresence>
         <div className="wrapper">
           <div className="sub-container">
             <SeeAllOverlay />
@@ -117,13 +116,13 @@ const All = () => {
                 <Content
                   key={image.src}
                   {...image}
-                  visible={visible}
+                  visible={setVisible}
                 />
               </div>
             ))}   
           </div>
         </div> 
-      {/* </AnimatePresence> */}
+      </AnimatePresence>
     </>
   )
 }
