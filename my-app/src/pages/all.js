@@ -75,19 +75,19 @@ const Content = ({ src, visible }) => {
 
 const All = () => {
 
-  // opening page transition
-  const [animationComplete, setAnimationComplete] = useState(false)
-  const completeAnimation = () => {
-    setAnimationComplete(true)
-  }
+  // // opening page transition
+  // const [animationComplete, setAnimationComplete] = useState(false)
+  // const completeAnimation = () => {
+  //   setAnimationComplete(true)
+  // }
 
-  useEffect(() => {    
-    allAnimation(completeAnimation)
-  }, [])
+  // useEffect(() => {    
+  //   allAnimation(completeAnimation)
+  // }, [])
 
   return (
     <>
-      {animationComplete === false ? <SeeAllOverlay /> : ""}
+      {/* {animationComplete === false ? <SeeAllOverlay /> : ""} */}
       <AnimatePresence>
         <div className="wrapper">
           <div className="sub-container">
