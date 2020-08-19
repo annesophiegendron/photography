@@ -62,11 +62,11 @@ const Content = ({ src, visible }) => {
         transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
         ref={contentRef}
         animate={animation}
-        initial="visible"
-        // variants={{
-        //   visible: { opacity: 1, x: 0 },
-        //   hidden: { opacity: 0, x: 300 }
-        // }}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: 300 }
+        }}
       >
       </motion.img>
     </motion.div>
@@ -88,7 +88,7 @@ const All = () => {
   return (
     <>
       {animationComplete === false ? <SeeAllOverlay /> : ""}
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <div className="wrapper">
           <div className="sub-container">
             <SeeAllOverlay />
