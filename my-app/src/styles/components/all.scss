@@ -28,7 +28,7 @@
 
 .content {
   width: 60%;
-  margin-left: 10rem;
+  margin-left: 12rem;
   margin-bottom: 60px;
   transform: rotate(90deg);
   margin-top: 15rem;
@@ -60,13 +60,13 @@
 // Info scroll div
 .container-scrolldown {
   margin-left: 50%;
-  background-color: #91D9CC;
+  background-color: black;
   margin-top: -9vh;
   border-radius: 100px;
   display: flex;
   width: 150px;
   height: 150px;
-  border: solid 2px #91D9CC;
+  border: solid 2px black;
   justify-content: center;
   @include media("<=phone") {
     visibility: hidden;;
@@ -79,7 +79,7 @@
 .message {
   padding: 60px;
   font-size: 18px;
-  color: #0D0D0D;
+  color: white;
   font-weight: lighter;
   letter-spacing: 1px;
 }
