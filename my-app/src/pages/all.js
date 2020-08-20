@@ -78,6 +78,7 @@ const Content = ({ src, visible }) => {
 }
 
 const All = () => {
+  // eslint-disable-next-line
   const [visible, onCycle] = useCycle(true, false)
 
   // opening page transition
