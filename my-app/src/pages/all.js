@@ -41,7 +41,7 @@ const Content = ({ src, visible }) => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-400px" // the animation occurs with a small delay when scrolling
+    rootMargin: "-300px" // the animation occurs with a small delay when scrolling
   })
 
     useEffect(() => {    
@@ -53,22 +53,36 @@ const Content = ({ src, visible }) => {
   return (
     <AnimatePresence>
       {visible && (
-            <motion.div className="image-container">
+        <motion.div
+          className="image-container"
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
+          ref={contentRef}
+          animate={animation}
+          initial="hidden"
+          whileTap={{ scale: 2 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 300 }
+          }} 
+        >
             <motion.img
               className="content"
               src={src}
               alt=""
-              whileHover={{
-                scale: 1.1,
-              }}
-              transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
-              ref={contentRef}
-              animate={animation}
-              initial="hidden"
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 300 }
-              }} 
+              // whileHover={{
+              //   scale: 1.1,
+              // }}
+              // transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
+              // ref={contentRef}
+              // animate={animation}
+              // initial="hidden"
+              // variants={{
+              //   visible: { opacity: 1, x: 0 },
+              //   hidden: { opacity: 0, x: 300 }
+              // }} 
             >
             </motion.img>
         </motion.div>

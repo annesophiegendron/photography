@@ -22,13 +22,14 @@
 .image-container {
   position: relative;
   margin-bottom: 150px;
-  transform: rotate(90deg) translateX(-100px);
 }
 
 .content {
   width: 60%;
-  margin-left: 35rem;
+  margin-left: 10rem;
   margin-bottom: 60px;
+  transform: rotate(90deg);
+  margin-top: 15rem;
 
   @include media("<=tablet") {
     max-width: 80%;
