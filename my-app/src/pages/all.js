@@ -58,11 +58,11 @@ const Content = ({ src, visible }) => {
           whileHover={{
             scale: 1.1,
           }}
-          transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
+          transition={{ type: 'spring', stiffness: 30, velocity: 0.3 }}
           ref={contentRef}
           animate={animation}
           initial="hidden"
-          whileTap={{ scale: 2 }}
+          whileTap={{ scale: 1.7 }}
           variants={{
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 300 }
@@ -72,17 +72,6 @@ const Content = ({ src, visible }) => {
               className="content"
               src={src}
               alt=""
-              // whileHover={{
-              //   scale: 1.1,
-              // }}
-              // transition={{ type: 'spring', stiffness: 20, velocity: 0.2 }}
-              // ref={contentRef}
-              // animate={animation}
-              // initial="hidden"
-              // variants={{
-              //   visible: { opacity: 1, x: 0 },
-              //   hidden: { opacity: 0, x: 300 }
-              // }} 
             >
             </motion.img>
         </motion.div>
