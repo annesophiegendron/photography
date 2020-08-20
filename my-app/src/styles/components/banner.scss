@@ -53,9 +53,11 @@
         font-weight: 600;
         @include media("<=tablet") {
           font-size: 1.3rem;
+          display: none;
         }
         @include media("<=phone") {
           font-size: 1.1rem;
+          display: none;
         }
         svg {
           margin-left: 16px;

@@ -131,3 +131,12 @@ nav {
     }
   }
 }
+
+.seeAllLink {
+  @include media("<=tablet") {
+    display: none;
+  }
+  @include media("<=phone") {
+    display:none;
+  }
+}

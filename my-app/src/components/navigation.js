@@ -25,7 +25,7 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/all" exact>
+                <NavLink to="/all" className="seeAllLink" exact>
                   see all
                 </NavLink>
               </li>
