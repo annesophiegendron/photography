@@ -68,7 +68,7 @@ const Content = ({ src, visible }) => {
               variants={{
                 visible: { opacity: 1, x: 0 },
                 hidden: { opacity: 0, x: 300 }
-              }}
+              }} 
             >
             </motion.img>
         </motion.div>
