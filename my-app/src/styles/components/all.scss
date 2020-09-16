@@ -1,45 +1,55 @@
-
 // Images Container
 .wrapper {
-  overflow-y:scroll;
-  overflow-x:hidden;
-  transform: rotate(270deg) translateX(-100%);
-  transform-origin: top left;
-  background-color:$white;
-  position:absolute;
-  width:100vh;
-  height:100vw;
+  // overflow-y:scroll;
+  // overflow-x:hidden;
+  // transform: rotate(270deg) translateX(-100%);
+  // transform-origin: top left;
+  // background-color:$white;
+  // position:absolute;
+  // width:100vh;
+  // height:100vw;
+
+//TEST
+  text-align: center;
+  width: 70vh;
+  height: 100vh;
+  background: $white;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 } 
  
-.sub-container {
-  background: $white;
-  padding-right: 10vh;
-  transform-origin: top left;
-  white-space:nowrap;
-  position: relative;
-} 
+// .sub-container {
+//   background: $white;
+//   padding-right: 10vh;
+//   transform-origin: top left;
+//   white-space:nowrap;
+//   position: relative;
+// } 
 
-.image-container {
-  position: relative;
-  margin-bottom: 150px;
-  cursor: pointer;
-}
+// .image-container {
+//   position: relative;
+//   margin-bottom: 150px;
+//   cursor: pointer;
+// }
 
 
-.content {
-  width: 60%;
-  margin-left: 12rem;
-  margin-bottom: 60px;
-  transform: rotate(90deg);
-  margin-top: 15rem;
+// .content {
+//   width: 60%;
+//   margin-left: 12rem;
+//   margin-bottom: 60px;
+//   transform: rotate(90deg);
+//   margin-top: 15rem;
 
-  @include media("<=tablet") {
-    max-width: 80%;
-  }
-  @include media("<=phone") {
-    max-width: 100%;
-  }
-}
+//   @include media("<=tablet") {
+//     max-width: 80%;
+//   }
+//   @include media("<=phone") {
+//     max-width: 100%;
+//   }
+// }
 
 // overlay transition
 .see-all-overlay {
@@ -58,30 +68,98 @@
 }
  
 // Info scroll div
-.container-scrolldown {
-  margin-left: 50%;
-  background-color: black;
-  margin-top: -9vh;
-  border-radius: 100px;
-  display: flex;
-  width: 150px;
-  height: 150px;
-  border: solid 2px black;
-  justify-content: center;
-  @include media("<=phone") {
-    visibility: hidden;;
-  }
-  @include media("<=tablet") {
-    visibility: hidden;
-  }
+// .container-scrolldown {
+//   margin-left: 50%;
+//   background-color: black;
+//   margin-top: -9vh;
+//   border-radius: 100px;
+//   display: flex;
+//   width: 150px;
+//   height: 150px;
+//   border: solid 2px black;
+//   justify-content: center;
+//   @include media("<=phone") {
+//     visibility: hidden;;
+//   }
+//   @include media("<=tablet") {
+//     visibility: hidden;
+//   }
+// }
+
+// .message {
+//   padding: 60px;
+//   font-size: 18px;
+//   color: white;
+//   font-weight: lighter;
+//   letter-spacing: 1px;
+// }
+
+// CONTENT
+.grid{
+  width: 90%;
 }
 
-.message {
-  padding: 60px;
-  font-size: 18px;
-  color: white;
-  font-weight: lighter;
-  letter-spacing: 1px;
+.grid-container {
+  ul {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto;
+
+
+    li {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 80px;
+      opacity: 1;
+
+      :hover {
+        cursor: pointer;
+        opacity: 0.6;
+      }
+    }
+      img {
+        width: 140px;
+        height:70px;
+      }
+    }
+  }
+
+.image-cover {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 69%;
+  height: 100%;
+  margin-left: -56px;
+  background-color: $white;
 }
+
+  .picture {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    margin: 0;
+  } 
+
+  // MODAL IMAGE
+  .modal-button {
+    background-color: $white;
+    border: none;
+    outline: none;
+  }
+
+  .modal-close-button {
+    cursor: pointer;
+    padding: 7px;
+    margin-bottom: 1rem;
+    border: lightgray 1px solid;
+  }
+
+  
+
 
 

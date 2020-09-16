@@ -14,14 +14,14 @@ import Navigation from './components/navigation'
 
 // Pages
 import Home from './pages/home'
-import All from './pages/all'
+import Allbis from './pages/Allbis'
 import SerieOne from './pages/series/serieOne'
 import SerieTwo from './pages/series/serieTwo'
 import SerieThree from './pages/series/serieThree'
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { path: "/all", name: "See all", Component: All },
+  { path: "/all", name: "See all", Component: Allbis },
   { path: "/serie001", name: "Serie 001", Component: SerieOne },
   { path: "/serie002", name: "Serie 002", Component: SerieTwo },
   { path: "/serie003", name: "Serie 003", Component: SerieThree }

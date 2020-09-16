@@ -86,7 +86,7 @@ return (
         initial="enter"
         animate="center"
         exit="exit"
-        whileTap={{ scale: 2 }}
+        whileTap={{ scale: 1.5 }}
         transition={{
           x: { type: "spring", stiffness: 300, damping: 200 },
           opacity: { duration: 0.7 }

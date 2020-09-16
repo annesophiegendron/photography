@@ -22,47 +22,47 @@ const homeAnimation = (completeAnimation) => {
     }
   })
     .to(".overlay-top", 1.6, {
-    height: 0,
-    ease: "expo.inOut",
-    stagger: 0.4,
-  })
+      height: 0,
+      ease: "expo.inOut",
+      stagger: 0.4,
+    })
     .to(".overlay-bottom", 1.6, {
-    width: 0,
-    ease: "expo.inOut", 
-    delay: -.8,
-    stagger: {
-      amount: 0.4,
-    }
+      width: 0,
+      ease: "expo.inOut",
+      delay: -.8,
+      stagger: {
+        amount: 0.4,
+      }
     })
     .to(".intro-overlay", 0, { css: { display: "none" } })
     .from(".serie-image img", 1.6, {
-    scale: 1.4,
-    ease: "expo.inOut", 
-    delay: -2,
-    stagger: {
-      amount: 0.4,
+      scale: 1.4,
+      ease: "expo.inOut",
+      delay: -2,
+      stagger: {
+        amount: 0.4,
       },
-    onComplete: completeAnimation //to change the state
-})
+      onComplete: completeAnimation //to change the state
+    })
 }
 
 const Home = () => {
   const [animationComplete, setAnimationComplete] = useState(false)
-  
+
   const completeAnimation = () => {
     setAnimationComplete(true)
   }
 
-  useEffect(() => {    
+  useEffect(() => {
     // on load timeline
-   homeAnimation(completeAnimation)
+    homeAnimation(completeAnimation)
   }, [])
 
   return (
     <>
       {animationComplete === false ? <IntroOverlay /> : ""}
-      <Banner />
-      <Series /> 
+        <Banner />
+        <Series />
     </>
   )
 }

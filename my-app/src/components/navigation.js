@@ -36,6 +36,7 @@ const Navigation = () => {
             <div className="nav-infos">
               <ul className="nav-info">
                 <li className="nav-info-label">annesophie.gendron@gmail.com</li>
+                <li className="nav-info-label">photo credits: https://www.pexels.com/ </li>
               </ul>
             </div>
           </div>

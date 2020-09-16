@@ -24,12 +24,12 @@ const allAnimation = (completeAnimation) => {
     stagger: 0.4,
   })
     .to(".overlay-transition", 1.1, {
-    height: 0,
-    ease: "expo.inOut", 
-    delay: .4,
-    stagger: {
-      amount: 0,
-    }
+      height: 0,
+      ease: "expo.inOut",
+      delay: .4,
+      stagger: {
+        amount: 0,
+      }
     })
     .to(".see-all-overlay", 0, {
       css: { display: "none" },
@@ -44,12 +44,12 @@ const Content = ({ src, visible }) => {
     rootMargin: "-300px" // the animation occurs with a small delay when scrolling
   })
 
-    useEffect(() => {    
+  useEffect(() => {
     if (inView) {
       animation.start("visible")
     }
   }, [animation, inView])
-  
+
   return (
     <AnimatePresence>
       {visible && (
@@ -66,14 +66,14 @@ const Content = ({ src, visible }) => {
           variants={{
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 300 }
-          }} 
+          }}
         >
-            <motion.img
-              className="content"
-              src={src}
-              alt=""
-            >
-            </motion.img>
+          <motion.img
+            className="content"
+            src={src}
+            alt=""
+          >
+          </motion.img>
         </motion.div>
       )}
     </AnimatePresence>
@@ -90,7 +90,7 @@ const All = () => {
     setAnimationComplete(true)
   }
 
-  useEffect(() => {    
+  useEffect(() => {
     allAnimation(completeAnimation)
   }, [])
 
@@ -123,9 +123,9 @@ const All = () => {
                   visible={visible}
                 />
               </div>
-            ))}   
+            ))}
           </div>
-        </div> 
+        </div>
       </AnimatePresence>
     </>
   )
