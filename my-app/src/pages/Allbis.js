@@ -80,7 +80,7 @@ const Allbis = () => {
                       show: false,
                       image: item.image,
                       key: item.id,
-                    })}
+                    })} 
                   >
 
                     {/* left side cards miniature */}

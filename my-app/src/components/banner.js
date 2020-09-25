@@ -13,7 +13,7 @@ const Banner = () => {
             </div>
           </h2>
           <div className="btn-row">
-            <NavLink to="/all" exact>See all <RightArrow />
+            <NavLink to="/all" exact>View gallery<RightArrow />
             </NavLink>
           </div>
         </div>

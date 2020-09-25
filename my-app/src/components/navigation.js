@@ -26,7 +26,7 @@ const Navigation = () => {
               </li>
               <li>
                 <NavLink to="/all" className="seeAllLink" exact>
-                  see all
+                  view gallery
                 </NavLink>
               </li>
               </ul>
