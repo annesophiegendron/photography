@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "framer": "^1.2.5",
     "framer-motion": "^2.3.0",
-    "gsap": "^3.4.2",
+    "gsap": "^3.6.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
